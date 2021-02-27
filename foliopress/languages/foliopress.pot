@@ -1,0 +1,338 @@
+# Copyright (C) 2018 Theme Horse
+# This file is distributed under the GNU General Public License v3 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FolioPress 1.1.1\n"
+"Report-Msgid-Bugs-To: https://www.themehorse.com/contact-us/\n"
+"POT-Creation-Date: 2018-07-13 09:07+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theme Horse <support@themehorse.com>\n"
+"Language-Team: Theme Horse <support@themehorse.com>\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+
+#: functions.php:47
+msgid "Primary"
+msgstr ""
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Try search?"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: header.php:28
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:53
+msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:100
+msgid "My Avatar"
+msgstr ""
+
+#: footer.php:67
+msgid "Copyright &copy; "
+msgstr ""
+
+#: footer.php:78
+msgid "Go to Top"
+msgstr ""
+
+#: searchform.php:10 searchform.php:12 searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: inc/functions.php:46 inc/customizer.php:330
+msgid "Social Profiles"
+msgstr ""
+
+#: inc/foliopress-footer-info.php:29
+#, php-format
+msgid "Proudly Powered by: %s"
+msgstr ""
+
+#: inc/foliopress-footer-info.php:29
+msgid "WordPress"
+msgstr ""
+
+#: inc/foliopress-footer-info.php:36
+#, php-format
+msgid "Theme by: %s"
+msgstr ""
+
+#. Author of the theme
+#: inc/foliopress-footer-info.php:36
+msgid "Theme Horse"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "Review FolioPress"
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Rate FolioPress"
+msgstr ""
+
+#: inc/customizer.php:24
+msgid "FolioPress Theme Instructions"
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "Theme Instructions"
+msgstr ""
+
+#: inc/customizer.php:27 inc/customizer.php:28
+msgid "Support Forum"
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "FolioPress Demo"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "View Demo"
+msgstr ""
+
+#: inc/customizer.php:118
+msgid "FolioPress Pro"
+msgstr ""
+
+#: inc/customizer.php:119
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: inc/customizer.php:149 inc/customizer.php:157
+msgid "FolioPress Support"
+msgstr ""
+
+#: inc/customizer.php:163
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer.php:169
+msgid "Site Layout"
+msgstr ""
+
+#: inc/customizer.php:182
+msgid "Fluid"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "Boxed"
+msgstr ""
+
+#: inc/customizer.php:188
+msgid "Content Layout"
+msgstr ""
+
+#: inc/customizer.php:197
+msgid ""
+"Below options are global setting. Set individual layout from specific page/ "
+"post."
+msgstr ""
+
+#: inc/customizer.php:202 inc/foliopress-metaboxes.php:50
+#: template-parts/widgets/foliopress-widgets.php:30
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:203 inc/foliopress-metaboxes.php:45
+#: template-parts/widgets/foliopress-widgets.php:19
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:204 inc/foliopress-metaboxes.php:35
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer.php:205
+msgid "No Sidebar Full Width"
+msgstr ""
+
+#: inc/customizer.php:210
+msgid "Post Layout"
+msgstr ""
+
+#: inc/customizer.php:223
+msgid "List"
+msgstr ""
+
+#: inc/customizer.php:224
+msgid "Grid"
+msgstr ""
+
+#: inc/customizer.php:235
+msgid "Show Featured Image on Page/Single Post"
+msgstr ""
+
+#: inc/customizer.php:242
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:252
+msgid "Hide Search"
+msgstr ""
+
+#: inc/customizer.php:263
+msgid "Navigation Fixed"
+msgstr ""
+
+#: inc/customizer.php:274
+msgid "Navigation Section Fluid"
+msgstr ""
+
+#: inc/customizer.php:282
+msgid "My Info"
+msgstr ""
+
+#: inc/customizer.php:283
+msgid "Below options will display only in post view layout."
+msgstr ""
+
+#: inc/customizer.php:293
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:304
+msgid "Description"
+msgstr ""
+
+#: inc/customizer.php:313
+msgid "Upload your Avatar"
+msgstr ""
+
+#: inc/customizer.php:322 inc/customizer.php:357
+msgid "Hide Social Profiles"
+msgstr ""
+
+#: inc/customizer.php:340
+msgid "Add the full link to your Social Profiles. Seperate with comma ,"
+msgstr ""
+
+#: inc/customizer.php:347
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:369
+msgid "Display Footer Info at center"
+msgstr ""
+
+#: inc/customizer.php:380
+msgid "Footer Fluid"
+msgstr ""
+
+#: inc/foliopress-metaboxes.php:15
+msgid "Below setting will not reflect on Grid Post View"
+msgstr ""
+
+#: inc/foliopress-metaboxes.php:30
+msgid "Default Layout set in Customizer"
+msgstr ""
+
+#: inc/foliopress-metaboxes.php:40
+msgid "No Sidebar, Full Width"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:24 template-parts/content.php:94
+msgid "Pages: "
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:38
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: template-parts/content.php:81 template-parts/content-search.php:36
+msgid "Read More"
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:21
+msgid "Shows widgets at Left Side."
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:32
+msgid "Shows widgets at Right Side."
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:41
+msgid "Footer - Column 1"
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:43
+msgid "Shows widgets at Footer Column 1."
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:52
+msgid "Footer - Column 2"
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:54
+msgid "Shows widgets at Footer Column 2."
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:63
+msgid "Footer - Column 3"
+msgstr ""
+
+#: template-parts/widgets/foliopress-widgets.php:65
+msgid "Shows widgets at Footer Column 3."
+msgstr ""
