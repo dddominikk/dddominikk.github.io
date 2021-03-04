@@ -1,3 +1,4 @@
+// from webhook.site
 var MessageHostCommunicator = (function () {
     function MessageHostCommunicator() {
         this.retryTimeout = 10000;
