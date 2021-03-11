@@ -1,6 +1,7 @@
 #Body{
- background: rgb(255, 73, 90);
+ background: black;
   height: auto;
   width: auto;
   FontFamily: SamsungSans;
+  FontColor: White;
 }
