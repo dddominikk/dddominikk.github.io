@@ -2,4 +2,6 @@
  background: transparent;
   height: auto;
   width: auto;
+ .webkit-html-doctype { color: #FF2467 !important; }
+.webkit-html-tag { color: #FF2467 !important; }
 }
