@@ -381,7 +381,7 @@ var app = (function () {
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "svelte-1d6pat0");
     			add_location(a, file, 6, 1, 82);
-    			attr_dev(input, "placeholder", "Package Name");
+    			attr_dev(input, "placeholder", "Coming soon...");
     			add_location(input, file, 7, 4, 156);
     			attr_dev(p, "class", "svelte-1d6pat0");
     			add_location(p, file, 7, 1, 153);
