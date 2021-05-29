@@ -1,0 +1,58 @@
+{{> head}}
+{{> top}}
+<main>
+   <article class="post search-page">
+      <div class="hero">
+         {{#checkIfAll @config.custom.uploadHero @config.custom.displayHeroImage}}
+            <figure class="hero__image hero__image--overlay">
+                <img
+                   src="{{@config.custom.uploadHero}}"
+                   {{#if @config.site.responsiveImages}}
+                      {{responsiveImageAttributes @config.custom.uploadHero}}
+                   {{/if}}
+                   {{ lazyload "eager" }}
+                   {{imageDimensions @config.custom.uploadHero}}
+                   alt="{{@config.custom.uploadHeroAlt}}">
+
+                {{#if @config.custom.uploadHeroCaption}}
+                   <figcaption>
+                      {{@config.custom.uploadHeroCaption}}
+                   </figcaption>
+                {{/if}}
+            </figure>
+         {{/checkIfAll}}
+         <header class="hero__content">
+            <div class="wrapper">
+               <h1>
+                  {{ translate 'search.title' }}
+               </h1>               
+            </div>
+         </header>
+      </div>
+      <div class="wrapper post__entry">
+          
+         <form action="{{@website.searchUrl}}" class="search-page__form">
+            <input
+               type="search"
+               name="{{@config.custom.searchParam}}"
+               placeholder="{{ translate 'search.placeholder' }}"
+               class="search-page__input"/>
+            <button type="submit">{{ translate 'search.submit' }}</button>
+         </form>
+
+         <script>
+            (function () {
+               var cx = '{{@config.custom.searchId}}';
+               var gcse = document.createElement('script');
+               gcse.type  = 'text/javascript';
+               gcse.async = true;
+               gcse.src   = 'https://cse.google.com/cse.js?cx=' + cx;
+               var s = document.getElementsByTagName('script')[0];
+               s.parentNode.insertBefore(gcse, s);
+            })();
+         </script>
+         <gcse:searchresults-only></gcse:searchresults-only>
+      </div>
+   </article>
+</main>
+{{> footer}}

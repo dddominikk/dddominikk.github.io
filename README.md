@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # create-svelte
+=======
+dddominikk.github.io
+## v0.06
+Publii + Airtable setup testing.
+>>>>>>> 761121bd17fa04196779616c71db8386c49454ba
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
