@@ -1,4 +1,6 @@
 dddominikk.github.io
+## v0.06
+Publii + Airtable setup testing.
 
 ## v0.05
 new, somewhat "real" favicon; decided to use Sapper to route pages for now, still too many question marks surrounding PWAs from a SEO standpoint (probably just my lack of knowledge, though). Fingers crossed the eventual migration to Sveltekit is gentler than my attempt to install the unstable pre-alpha build was earlier today.
