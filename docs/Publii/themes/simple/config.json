@@ -1,0 +1,1747 @@
+{
+    "name": "Simple",
+    "version": "2.3.1.0",
+    "author": "TidyCustoms <https://tidycustoms.net/>",
+    "menus": {
+        "mainMenu": "Main menu"
+    },
+    "renderer": {
+        "relatedPostsNumber": 3,
+        "renderRelatedPosts": true,
+        "renderSimilarPosts": false,
+        "renderPrevNextPosts": true,
+        "createContentStructure": true,
+        "createTagPages": true,
+        "createAuthorPages": true,
+        "createTagsList": true,
+        "createSearchPage": true,
+        "create404page": true,
+        "customHTML": {
+            "afterPost": "After every post"
+        }
+    },
+    "supportedFeatures": {
+        "blockEditor": true,
+        "tagsList": true,
+        "tagImages": true,
+        "authorImages": true,
+        "searchPage": true,
+        "errorPage": true
+    },
+    "config": [
+
+        {
+            "name": "postsPerPage",
+            "label": "Posts per page",
+            "value": 5,
+            "type": "number"
+        },
+        {
+            "name": "tagsPostsPerPage",
+            "label": "Tags posts per page",
+            "value": 5,
+            "type": "number"
+        },
+        {
+            "name": "authorsPostsPerPage",
+            "label": "Authors posts per page",
+            "value": 5,
+            "type": "number"
+        },
+        {
+            "name": "excerptLength",
+            "label": "Excerpt length",
+            "value": 45,
+            "type": "number"
+        },
+        {
+            "name": "logo",
+            "label": "Website logo",
+            "value": "",
+            "type": "upload",
+            "upload": true
+        }
+    ],
+    "customConfig": [
+        {
+            "name": "pageMargin",
+            "label": "Page margin",
+            "group": "Layout",
+            "value": "6vw",
+            "type": "text"
+        },
+        {
+            "name": "pageWidth",
+            "label": "Page width",
+            "group": "Layout",
+            "note": "For full-screen width, set to 100%",
+            "value": "42rem",
+            "type": "text"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Front page",
+            "group": "Layout",
+            "size": "big"
+        },
+        {
+            "name": "frontSource",
+            "label": "Front page displays",
+            "group": "Layout",            
+            "value": "default",
+            "type": "radio",
+            "options": [
+                {
+                    "label": "Latest posts",
+                    "value": "default"
+                },
+                {
+                    "label": "Selected post",
+                    "value": "post"
+                }
+            ]
+        },  
+        {
+            "name": "frontPost",
+            "label": "Posts",
+            "group": "Layout",
+            "note": "We strongly recommended 'hide' and 'noindex' the selected post to avoid the duplicate content issue.",
+            "value": "",
+            "type": "posts-dropdown", 
+            "dependencies": [
+            {
+                "field": "frontSource",
+                "value": "post"
+            }]
+        },
+        {
+            "name": "frontGallery",
+            "group": "Layout",
+            "label": "",
+            "note": "Enable if you want to display a post with image gallery",
+            "value": false,
+            "type": "checkbox", 
+            "dependencies": [
+            {
+                "field": "frontSource",
+                "value": "post"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Layout",
+            "size": "small",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },
+        {
+            "name": "frontFeaturedImage",
+            "group": "Layout",
+            "label": "Featured image",
+            "value": false,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },
+        {
+            "name": "frontAuthor",
+            "group": "Layout",
+            "label": "Author name",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },
+        {
+            "name": "frontAvatar",
+            "group": "Layout",
+            "label": "Author avatar",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },
+        {
+            "name": "frontDate",
+            "group": "Layout",
+            "label": "Date",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },
+        {
+            "name": "frontReadMore",
+            "group": "Layout",
+            "label": "Read more button",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },
+       
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Tag Page",
+            "group": "Layout",
+            "size": "big"
+        },
+        {
+            "name": "tagFeaturedImage",
+            "group": "Layout",
+            "label": "Featured image",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "tagAuthor",
+            "group": "Layout",
+            "label": "Author name",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "tagAvatar",
+            "group": "Layout",
+            "label": "Author avatar",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "tagDate",
+            "group": "Layout",
+            "label": "Date",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "tagReadMore",
+            "group": "Layout",
+            "label": "Read more button",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Tags Page",
+            "group": "Layout",
+            "size": "big"
+        },
+        {
+            "name": "tagsPostCount",
+            "group": "Layout",
+            "label": "Post count",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "tagsDescription",
+            "group": "Layout",
+            "label": "Tag description",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Author page",
+            "group": "Layout",
+            "size": "big"
+        },
+        {
+            "name": "authorFeaturedImage",
+            "group": "Layout",
+            "label": "Featured image",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "authorAuthor",
+            "group": "Layout",
+            "label": "Author name",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "authorAvatar",
+            "group": "Layout",
+            "label": "Author avatar",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "authorDate",
+            "group": "Layout",
+            "label": "Date",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "authorReadMore",
+            "group": "Layout",
+            "label": "Read more button",
+            "value": true,
+            "type": "checkbox"
+        },  
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Post page",
+            "group": "Layout",
+            "size": "big"
+        }, 
+        {
+            "name": "relatedPostsNumber",
+            "label": "Related post",
+            "group": "Layout",
+            "note": "Specify number of related posts to show. Zero '0' means no posts.",
+            "value": "3",
+            "type": "text"
+        },
+        {
+            "name": "navbarHeight",
+            "group": "Navbar",
+            "label": "Navbar height",
+            "value": "6rem",
+            "type": "text"
+        },    
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Dropdown menu",
+            "group": "Navbar",
+            "size": "big"
+        },
+        {
+            "name": "submenu",
+            "label": "Width",
+            "group": "Navbar",
+            "value": "auto",
+            "type": "radio",
+            "options": [
+                {
+                    "label": "Auto",
+                    "value": "auto"
+
+                },
+                {
+                    "label": "Custom",
+                    "value": "custom"
+
+                }
+            ]
+        },
+        {
+            "name": "submenuWidth",
+            "group": "Navbar",
+            "note": "The submenu width in PX unit",
+            "label": "",
+            "value": "240",
+            "type": "range",
+            "min": 0,
+            "max": 1000,
+            "step": 10,
+            "dependencies": [{
+                "field": "submenu",
+                "value": "custom"
+            }]
+        },              
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Mobile menu",
+            "group": "Navbar",
+            "size": "big"
+        },
+        {
+            "name": "mobilemenu",
+            "label": "Type",
+            "group": "Navbar",
+            "value": "sidebar",
+            "type": "radio",
+            "options": [
+                {
+                    "label": "Sidebar",
+                    "value": "sidebar"
+                },
+                {
+                    "label": "Overlay",
+                    "value": "overlay"
+                }
+            ]
+        },
+        {
+            "name": "mobilemenuExpandableSubmenus",
+            "label": "Expandable submenus",
+            "group": "Navbar",
+            "value": true,
+            "type": "checkbox"
+        },
+        
+        {
+            "name": "heightHero",
+            "label": "Height",
+            "group": "Hero Section",
+            "note": "Use of VH units recommended; for full-screen set to 100vh",
+            "value": "80vh",
+            "type": "text"
+        },        
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Hero Section",
+            "size": "small"
+        },
+        {
+            "name": "displayHeroImage",
+            "group": "Hero Section",
+            "label": "Image assignment",
+            "note": "Display hero image on all pages like frontpage, tags, authors, search, 404, also on the post pages when the featured image doesn't exist; otherwise, it will be displayed on the frontpage only. ",
+            "value": false,
+            "type": "checkbox"
+        },
+
+        {
+            "name": "uploadHero",
+            "label": "Image",
+            "group": "Hero Section",
+            "value": "",
+            "type": "upload",
+            "upload": true
+        },
+        {
+            "name": "uploadHeroAlt",
+            "label": "Image Alt text",
+            "group": "Hero Section",
+            "placeholder": "Add an alternative text to the hero image",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "name": "uploadHeroCaption",
+            "label": "Image Caption",
+            "group": "Hero Section",
+            "placeholder": "Add text caption to the hero image",
+            "value": "",
+            "type": "text"
+        },
+
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Hero Section",
+            "size": "small"
+        },
+        {
+            "name": "textHero",
+            "label": "Text",
+            "group": "Hero Section",
+            "value": "<h1>Welcome to my blog :)</h1><p>Create a unique and beautiful blog quickly and easily.</p>",
+            "type": "wysiwyg"
+        },
+        {
+            "name": "siteOwner",
+            "group": "Hero Section",
+            "label": "Site owner",
+            "note": "Displays the avatar and the name of the website owner (Main author)",
+            "value": true,
+            "type": "checkbox"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Apperance",
+            "group": "Hero Section",           
+            "note": "The appearance settings of the hero section can be found on the <a href=\"#\" data-internal-link=\"Colors#hero\">Colors</a> tab.",
+            "size": "small"
+        },
+
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Main colors",
+            "group": "Colors",
+            "size": "small"
+        },
+        {
+            "name": "primaryColor",
+            "label": "Primary color",
+            "group": "Colors",
+            "value": "#D73A42",
+            "type": "colorpicker"
+        },             
+        {
+            "name": "headingColor",
+            "label": "Headings color",
+            "group": "Colors",
+            "value": "#17181E",
+            "type": "colorpicker"
+        },
+        {
+            "name": "textColor",
+            "label": "Text color",
+            "group": "Colors",
+            "value": "#17181E",
+            "type": "colorpicker"
+        },
+        {
+            "anchor": "hero",
+            "name": "separator",
+            "type": "separator",
+            "label": "Hero Section",
+            "group": "Colors",
+            "size": "big"
+        },
+        {
+            "name": "heroBackground",
+            "label": "Background",
+            "group": "Colors",
+            "value": "#17181E",
+            "type": "colorpicker"
+        },  
+        {
+            "name": "heroOverlay",
+            "label": "Overlay",
+            "group": "Colors",
+            "note": "The overlay works with the image and only when it has been fully loaded.",
+            "value": "gradient",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Solid color",
+                    "value": "color"
+                },
+                {
+                    "label": "Gradient",
+                    "value": "gradient"
+                }
+            ]
+        },        
+        {
+            "name": "heroOverlayColor",
+            "label": "",
+            "group": "Colors",
+            "value": "rgba(0, 0, 0, 0.64)",
+            "type": "colorpicker",
+            "dependencies": [{
+                "field": "heroOverlay",
+                "value": "color"
+            }]
+        },
+        {
+            "name": "heroOverlayGradient",
+            "label": "",
+            "group": "Colors",
+            "value": "rgba(0, 0, 0, 0.64)",
+            "type": "colorpicker",
+            "dependencies": [{
+                "field": "heroOverlay",
+                "value": "gradient"
+            }]
+        },
+        {
+            "name": "heroOverlayGradientDirection",
+            "label": "",
+            "group": "Colors",
+            "note": "Gradient direction",
+            "value": "bottom",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Top",
+                    "value": "Top"
+                },
+                {
+                    "label": "Right",
+                    "value": "right"
+                },
+                {
+                    "label": "Bottom",
+                    "value": "bottom"
+                },
+                {
+                    "label": "Left",
+                    "value": "left"
+                }
+            ],
+            "dependencies": [{
+                "field": "heroOverlay",
+                "value": "gradient"
+            }]
+        },
+        {
+            "name": "heroHeadingColor",
+            "label": "Heading (H1) color",
+            "group": "Colors",
+            "value": "#FFFFFF",
+            "type": "colorpicker"
+        },
+        {
+            "name": "heroTextColor",
+            "label": "Text color",
+            "group": "Colors",
+            "value": "rgba(255,255,255,0.75)",
+            "type": "colorpicker"
+        },
+        {
+            "name": "heroLink",
+            "label": "Link color",
+            "group": "Colors",
+            "value": "#FFFFFF",
+            "type": "colorpicker"
+        },
+        {
+            "name": "heroLinkHover",
+            "label": "Link hover color",
+            "group": "Colors",
+            "value": "rgba(255,255,255,0.75)",
+            "type": "colorpicker"
+        },
+        {
+            "name": "heroBorderColor",
+            "label": "Border color",
+            "group": "Colors",
+            "value": "rgba(255,255,255,0.3)",
+            "type": "colorpicker"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Main font settings",
+            "group": "Fonts",
+            "size": "small"
+        },        
+        {
+            "name": "fontFamily",
+            "label": "Font family",
+            "group": "Fonts",
+            "note": "The 'OS Default Font' option will use the native system fonts of the browser your site visitors are using, providing a boost to speed and performance.<p><strong>Please note:</strong> when using Google Fonts, the IP address of your website visitors will be sent to Google to allow the correct fonts to be downloaded to their browser. The Google Fonts API limits the collection, storage and use of end-user data only to what is needed to deliver the fonts efficiently.</p>",
+            "value": "font-pair-0",
+            "type": "select",
+            "options": [
+                {
+                    "label": "OS Default Font + OS Default Font",
+                    "value": "font-pair-0"
+                },
+                {
+                    "label": "PT Serif + OS Default Font",
+                    "value": "font-pair-1"
+                },
+                {
+                    "label": "Lora + OS Default Font",
+                    "value": "font-pair-2"
+                },
+                {
+                    "label": "Playfair Display + OS Default Font",
+                    "value": "font-pair-3"
+                },
+                {
+                    "label": "Rubik + OS Default Font",
+                    "value": "font-pair-4"
+                },
+                {
+                    "label": "Ubuntu + OS Default Font",
+                    "value": "font-pair-5"
+                },
+                {
+                    "label": "Open Sans + Roboto",
+                    "value": "font-pair-6"
+                },
+                {
+                    "label": "Roboto Condensed + OS Default Font",
+                    "value": "font-pair-7"
+                },
+                {
+                    "label": "Cairo + Maitree",
+                    "value": "font-pair-8"
+                }
+            ]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Fonts",
+            "size": "big"
+        },
+        {
+            "name": "minFontSize",
+            "label": "Minimum font size",
+            "group": "Fonts",
+            "note": "The font-size of the root element in REM unit",
+            "value": "1.1",
+            "type": "range",
+            "min": 1,
+            "max": 3,
+            "step": 0.05
+        },
+        {
+            "name": "maxFontSize",
+            "label": "Maximum font size",
+            "group": "Fonts",
+            "note": "The font-size of the root element in REM unit",
+            "value": "1.2",
+            "type": "range",
+            "min": 1,
+            "max": 3,
+            "step": 0.05
+        },  
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Fonts",
+            "size": "big"
+        },
+        {
+            "name": "fontNormalWeight",
+            "label": "Normal font weight",
+            "group": "Fonts",            
+            "value": "400",
+            "type": "select",
+            "options": [
+                {
+                    "label": "300",
+                    "value": "300"
+                },
+                {
+                    "label": "400",
+                    "value": "400"
+                },
+                {
+                    "label": "500",
+                    "value": "500"
+                },
+                {
+                    "label": "600",
+                    "value": "600"
+                },
+                {
+                    "label": "700",
+                    "value": "700"
+                },
+                {
+                    "label": "900",
+                    "value": "900"
+                }
+            ]
+        },
+        {
+            "name": "fontBoldWeight",
+            "label": "Bold font weight",
+            "group": "Fonts",            
+            "value": "600",
+            "type": "select",
+            "options": [
+                {
+                    "label": "300",
+                    "value": "300"
+                },
+                {
+                    "label": "400",
+                    "value": "400"
+                },
+                {
+                    "label": "500",
+                    "value": "500"
+                },
+                {
+                    "label": "600",
+                    "value": "600"
+                },
+                {
+                    "label": "700",
+                    "value": "700"
+                },
+                {
+                    "label": "900",
+                    "value": "900"
+                }
+            ]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Fonts",
+            "size": "big"
+        },
+        {
+            "name": "lineHeight",
+            "label": "Line height",
+            "group": "Fonts",
+            "note": "The default line-height for the entire website",
+            "value": "1.7",
+            "type": "range",
+            "min": 1,
+            "max": 3,
+            "step": 0.1
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Headings",
+            "group": "Fonts",
+            "size": "big"
+        },  
+        {
+            "name": "fontHeadignsWeight",
+            "label": "H1-H6 font weight",
+            "group": "Fonts",            
+            "value": "700",
+            "type": "select",
+            "options": [
+                {
+                    "label": "300",
+                    "value": "300"
+                },
+                {
+                    "label": "400",
+                    "value": "400"
+                },
+                {
+                    "label": "500",
+                    "value": "500"
+                },
+                {
+                    "label": "600",
+                    "value": "600"
+                },
+                {
+                    "label": "700",
+                    "value": "700"
+                },
+                {
+                    "label": "900",
+                    "value": "900"
+                }
+            ]
+        },
+        {
+            "name": "fontHeadingsTransform",
+            "label": "H1-H6 text transform",
+            "group": "Fonts",            
+            "value": "none",
+            "type": "select",
+            "options": [
+                {
+                    "label": "None",
+                    "value": "none"
+                },
+                {
+                    "label": "Capitalize",
+                    "value": "capitalize"
+                },
+                {
+                    "label": "Lowercase",
+                    "value": "lowercase"
+                },
+                {
+                    "label": "Uppercase",
+                    "value": "uppercase"
+                }
+            ]
+        },
+
+        {
+            "name": "search",
+            "label": "Search",
+            "group": "Search",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "searchId",
+            "group": "Search",
+            "label": "Google Custom Search Id",
+            "note": "A search ID is required for search functionality, which uses Google Custom Search. Learn how to configure it here: <a href='https://getpublii.com/docs/search-configuration.html' target='_blank'>https://www.getpublii.com/docs/...</a>",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "search",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "searchParam",
+            "group": "Search",
+            "label": "Search parameter",
+            "note": "You can change the default \"q\" search parameter if desired; this is recommended only for advanced users.",
+            "value": "q",
+            "type": "text",
+            "dependencies": [{
+                "field": "search",
+                "value": "true"
+            }]
+        },
+
+        {
+            "name": "shareFacebook",
+            "group": "Share Buttons",
+            "label": "Facebook",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareTwitter",
+            "group": "Share Buttons",
+            "label": "Twitter",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareTwitterName",
+            "group": "Share Buttons",
+            "note": "Enter your Twitter account's handle here; it will be used when the Twitter share button is clicked on your site e.g. 'via @TwitterHandle'. If left blank, the default username of @SiteName will be used",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "shareTwitter",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "sharePinterest",
+            "group": "Share Buttons",
+            "label": "Pinterest",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareMix",
+            "group": "Share Buttons",
+            "label": "Mix (formerly StumbleUpon)",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareLinkedin",
+            "group": "Share Buttons",
+            "label": "LinkedIn",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareBuffer",
+            "group": "Share Buttons",
+            "label": "Buffer",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareWhatsApp",
+            "group": "Share Buttons",
+            "label": "WhatsApp",
+            "value": false,
+            "type": "checkbox"
+        },
+
+        {
+            "name": "commentDisqusShortname",
+            "label": "Disqus shortname",
+            "group": "Comments",
+            "placeholder": "Please enter your Disqus shortname",
+            "note": "A shortname is the unique identifier assigned to a Disqus site. Please visit https://help.disqus.com/ to find more details. <br /><br /><span style=\"background: #fff8d4\">Do not forget to enable comments under Post Options tab.</span>",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "name": "backToTopButton",
+            "group": "Footer",
+            "label": "\"Back to top\" button",
+            "value": true,
+            "type": "checkbox"
+        },  
+         {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Footer",
+            "size": "small"
+        },
+        {
+            "name": "socialButtons",
+            "group": "Footer",
+            "label": "Follow Buttons",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "socialFacebook",
+            "label": "Facebook",
+            "group": "Footer",
+            "placeholder": "Please enter your Facebook URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialTwitter",
+            "label": "Twitter",
+            "group": "Footer",
+            "placeholder": "Please enter your Twitter URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+
+        {
+            "name": "socialInstagram",
+            "label": "Instagram",
+            "group": "Footer",
+            "placeholder": "Please enter your Instagram URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialLinkedin",
+            "label": "LinkedIn",
+            "group": "Footer",
+            "placeholder": "Please enter your LinkedIn URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialVimeo",
+            "label": "Vimeo",
+            "group": "Footer",
+            "placeholder": "Please enter your Vimeo URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialPinterest",
+            "label": "Pinterest",
+            "group": "Footer",
+            "placeholder": "Please enter your Pinterest URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialYoutube",
+            "label": "Youtube",
+            "group": "Footer",
+            "placeholder": "Please enter your Youtube URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Footer",
+            "size": "small"
+        },
+        {
+            "name": "copyrightText",
+            "label": "Copyright text",
+            "group": "Footer",
+            "value": "Powered by <a href=\"https://getpublii.com\" target=\"_blank\" rel=\"nofollow noopener\">Publii</a>",
+            "type": "wysiwyg"
+        },
+        {
+            "name": "galleryItemGap",
+            "label": "Item spacing",
+            "group": "Gallery",
+            "note": "Use of REM units recommended but you can also use others (px, vw,)",
+            "value": "0.28333rem",
+            "type": "text"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Gallery",
+            "size": "small"
+         },
+        {
+            "name": "galleryLightboxStyle",
+            "label": "Lightbox style",
+            "group": "Gallery",
+            "note": "Set the lightbox slideshow style by choosing dark or light overlay",
+            "value": "pswp--dark",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Dark",
+                    "value": "pswp--dark"
+                },
+                {
+                    "label": "Light",
+                    "value": "pswp--light"
+                }
+            ]
+        },
+        {
+            "name": "galleryLightboxOpacity",
+            "label": "",
+            "group": "Gallery",
+            "note": "Adjust the lightbox overlay transparency",
+            "value": "0.7",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Gallery",
+            "size": "small"
+         },
+        {
+            "name": "galleryAdvanced",
+            "label": "Advanced lightbox settings",
+            "group": "Gallery",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "galleryCounter",
+            "label": "Current slide / total number",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryZoom",
+            "label": "Zoom in/out button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryFullscreen",
+            "label": "Toggle fullscreen button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryShare",
+            "label": "Share button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryClose",
+            "label": "Close button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryArrows",
+            "label": "Next / Previous arrows",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryPreloader",
+            "label": "Preloader",
+            "group": "Gallery",
+            "note": "Loading indicator is displayed with 1s delay, so if the photo loads faster it will be invisible.",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryCloseOnScroll",
+            "label": "Close gallery on page scroll",
+            "group": "Gallery",
+            "note": "Option works just for devices without hardware touch support.",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryArrowKeys",
+            "label": "Keyboard navigation",
+            "group": "Gallery",
+            "note": "Keyboard left or right arrow key navigation.",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+
+        {
+            "name": "formatDate",
+            "label": "Date format",
+            "group": "Additional",
+            "value": "MMMM D, YYYY",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Nov 1, 2016",
+                    "value": "MMM D, YYYY"
+
+            },
+                {
+                    "label": "1 Nov 2016",
+                    "value": "D MMM YYYY"
+
+            },
+                {
+                    "label": "November 1, 2016",
+                    "value": "MMMM D, YYYY"
+            },
+                {
+                    "label": "1 November 2016",
+                    "value": "D MMMM YYYY"
+            },
+                {
+                    "label": "Sunday, November 1, 2016",
+                    "value": "dddd, MMMM D, YYYY"
+            },
+                {
+                    "label": "Sunday, 1 November 2016",
+                    "value": "dddd, D MMMM YYYY"
+            },
+                {
+                    "label": "November 1, 2016 10:02:05",
+                    "value": "MMMM D, YYYY HH:mm:ss"
+
+            },
+                {
+                    "label": "1 November 2016 10:02:05",
+                    "value": "D MMMM YYYY HH:mm:ss"
+
+            },
+                {
+                    "label": "01/21/2016",
+                    "value": "MM/DD/YYYY"
+            },
+                {
+                    "label": "21/01/2016",
+                    "value": "DD/MM/YYYY"
+            },
+                {
+                    "label": "Custom - create your own date format",
+                    "value": "custom"
+            }
+            ]
+        },
+
+        {
+            "name": "formatDateCustom",
+            "group": "Additional",
+            "label": "Create a custom date format",
+            "note": "More details you can find <a href='https://github.com/taylorhakes/fecha' target='_blank'>here.</a>",
+            "value": "HH:mm:ss YY/MM/DD",
+            "type": "text",
+            "dependencies": [{
+                "field": "formatDate",
+                "value": "custom"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Additional",
+            "size": "small"
+         },       
+        {
+            "name": "lazyLoadEffect",
+            "label": "Lazy load effects",
+            "group": "Additional",
+            "note": "This option works only if the 'Media lazy load' option is enabled in the Website Speed tab under Site Settings",
+            "value": "fadein",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Fade in",
+                    "value": "fadein"
+                },
+                {
+                    "label": "None",
+                    "value": "none"                
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Additional",
+            "size": "small"
+         },
+        {
+            "name": "faviconUpload",
+            "label": "Upload favicon file",
+            "group": "Additional",
+            "note": "The ideal size of a favicon is 16x16 pixels. Save your favicon as either favicon.png or favicon.ico",
+            "value": "",
+            "type": "smallupload",
+            "upload": true
+        },
+        {
+            "name": "faviconExtension",
+            "label": "Favicon extension",
+            "group": "Additional",
+            "value": "image/x-icon",
+            "type": "select",
+            "options": [
+                {
+                    "label": ".ico",
+                    "value": "image/x-icon"
+                },
+                {
+                    "label": ".png",
+                    "value": "image/png"
+                }]
+        }
+    ],
+    "postConfig": [
+         {
+            "name": "displayDate",
+            "label": "Display date",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayAuthor",
+            "label": "Display author",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },       
+        {
+            "name": "displayLastUpdatedDate",
+            "label": "Display last updated date",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayTags",
+            "label": "Display tags",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayShareButtons",
+            "label": "Display share buttons",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        
+        {
+            "name": "displayAuthorBio",
+            "label": "Display author bio",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayPostNavigation",
+            "label": "Display post navigation",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+
+        {
+            "name": "displayRelatedPosts",
+            "label": "Display related posts",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayComments",
+            "label": "Display comments",
+            "value": 0,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        }
+    ],
+    "files": {
+        "ignoreAssets": ["scss", ".DS_Store"],
+        "assetsPath": "assets",
+        "partialsPath": "partials",
+        "responsiveImages": {
+            "contentImages": {
+                "sizes": "(max-width: 48em) 100vw, 768px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto"
+                    },
+                    "lg": {
+                        "width": 1024,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1360,
+                        "height": "auto"
+                    },
+                    "2xl": {
+                        "width": 1600,
+                        "height": "auto"
+                    }
+                }
+            },
+
+            "featuredImages": {
+                "sizes": {
+                    "post": "(max-width: 1600px) 100vw, 1600px",
+                    "amp": "(max-width: 768px) 100vw, 768px"
+                },
+
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto",
+                        "group": "post,amp"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto",
+                        "group": "post,amp"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto",
+                        "group": "post,amp"
+                    },
+                    "lg": {
+                        "width": 1024,
+                        "height": "auto",
+                        "group": "post"
+                    },
+                    "xl": {
+                        "width": 1360,
+                        "height": "auto",
+                        "group": "post"
+                    },
+                    "2xl": {
+                        "width": 1600,
+                        "height": "auto",
+                        "group": "post"
+                    }
+                }
+            },
+
+            "tagImages": {
+                "sizes": "(max-width: 1600px) 100vw, 1600px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto"
+                    },
+                    "lg": {
+                        "width": 1024,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1360,
+                        "height": "auto"
+                    },
+                    "2xl": {
+                        "width": 1600,
+                        "height": "auto"
+                    }
+                }
+            },
+
+            "authorImages": {
+                "sizes": "(max-width: 1600px) 100vw, 1600px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto"
+                    },
+                    "lg": {
+                        "width": 1024,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1360,
+                        "height": "auto"
+                    },
+                    "2xl": {
+                        "width": 1600,
+                        "height": "auto"
+                    }
+                }
+            },
+
+            "optionImages": {
+                "sizes": "(max-width: 1600px) 100vw, 1600px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": 255,
+                        "crop": true
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto"
+                    },
+                    "lg": {
+                        "width": 1024,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1360,
+                        "height": "auto"
+                    },
+                    "2xl": {
+                        "width": 1600,
+                        "height": "auto"
+                    }
+                }
+            },
+            
+            "galleryImages": {
+                "sizes": "",
+                "dimensions": {
+                    "thumbnail": {
+                         "width": 720,
+                         "height": "auto"                       
+                    }
+                }
+            }
+        }
+    },
+    "customElements": [
+         {
+            "label": "Ordered list",
+            "cssClasses": "ordered-list",
+            "selector": "ol"
+        },
+        {
+            "label": "Drop cap",
+            "cssClasses": "dropcap",
+            "selector": "p"
+        },        
+        {
+            "label": "Info",
+            "cssClasses": "msg msg--info",
+            "selector": "p"
+        },
+        {
+            "label": "Highlight",
+            "cssClasses": "msg msg--highlight ",
+            "selector": "p"
+        },
+        {
+            "label": "Success",
+            "cssClasses": "msg msg--success",
+            "selector": "p"
+        },
+        {
+            "label": "Warning",
+            "cssClasses": "msg msg--warning",
+            "selector": "p"
+        },
+        {
+            "label": "Table bordered",
+            "cssClasses": "table-bordered",
+            "selector": "table"
+        },
+        {
+            "label": "Table striped",
+            "cssClasses": "table-striped",
+            "selector": "table"
+        },
+        {
+            "label": "Table title",
+            "cssClasses": "table-title",
+            "selector": "table"
+        }
+    ]
+}

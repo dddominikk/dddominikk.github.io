@@ -1,0 +1,20 @@
+{
+    "alwaysSaveSearchState": false,
+    "backupsLocation": "",
+    "previewLocation": "",
+    "licenseAccepted": true,
+    "openDevToolsInMain": false,
+    "openDevToolsInPreview": false,
+    "resizeEngine": "sharp",
+    "sitesLocation": "C:\\Users\\Dominik\\Documents\\Publii\\sites",
+    "startScreen": "",
+    "timeFormat": "12",
+    "closeEditorOnSave": true,
+    "wideScrollbars": true,
+    "showModificationDateAsColumn": false,
+    "showPostSlugs": false,
+    "postsOrdering": "id DESC",
+    "tagsOrdering": "id DESC",
+    "authorsOrdering": "id DESC",
+    "appTheme": "dark"
+}
